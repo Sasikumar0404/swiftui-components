@@ -6,7 +6,6 @@ struct SideMenuView: View {
     var body: some View {
         ZStack(alignment: .leading) {
             if isShowing {
-                // Background overlay to close menu when tapped
                 Color.black.opacity(0.4)
                     .edgesIgnoringSafeArea(.all)
                     .onTapGesture {
@@ -15,7 +14,7 @@ struct SideMenuView: View {
                         }
                     }
                 
-                // Side Menu Content
+                /// Side Menu Content
                 VStack(alignment: .leading) {
                     HStack {
                         Image(systemName: "person.circle.fill")
@@ -33,7 +32,7 @@ struct SideMenuView: View {
 
                     MenuButton(title: "Home", icon: "house.fill") {
                         withAnimation {
-                            isShowing = false  // Dismiss menu
+                            isShowing = false
                         }
                         print("Home Tapped")
                     }
@@ -113,11 +112,5 @@ struct ContentViewWithMenu: View {
             }
             .overlay(SideMenuView(isShowing: $showMenu))
         }
-    }
-}
-
-struct ContentViewWithMenu_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentViewWithMenu()
     }
 }

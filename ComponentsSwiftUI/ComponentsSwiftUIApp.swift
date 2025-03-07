@@ -25,7 +25,7 @@ struct ComponentsSwiftUIApp: App {
 
     var body: some Scene {
         WindowGroup {
-            CustomDropdownPicker()
+            MainDemoView()
         }
         .modelContainer(sharedModelContainer)
     }
